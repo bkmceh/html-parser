@@ -20,33 +20,20 @@ public class SecondVariant {
 
 
     private static void findWords(String words, HashSet delimeters) {
-        boolean isFind = true;
 
-        Iterator<Character> iterator = delimeters.iterator();
+        char[] chars = words.toCharArray();
 
         int indexBegin = 0;
-        int indexEnd = 0;
 
-        while (iterator.hasNext()) {
-            String delimiter = iterator.next().toString();
-            if (words.contains(delimiter)) {
-                System.out.println(words.indexOf(delimiter));
-                indexEnd = words.indexOf(delimiter);
-                System.out.format("\nDelimiter: %s, %s\n", delimiter, words.substring(indexBegin, indexEnd));
-                indexBegin = indexEnd;
+
+        for (int i = 0; i < chars.length; i++) {
+            if (delimeters.contains(chars[i])) {
+                String word = words.substring(indexBegin, i);
+                System.out.println(word);
+                indexBegin = i + 1;
             }
         }
 
-//        while (isFind) {
-//            for (Object element :
-//                    delimeters) {
-//                String elementChar = (String) element;
-//                if (words.contains(elementChar)) {
-//                    System.out.format("\n%s", words.substring(words.indexOf(elementChar)));
-//                }
-//            }
-//            isFind = false;
-//        }
     }
 }
 
