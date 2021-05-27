@@ -9,9 +9,6 @@ public class HtmlPageWordStats {
     }
 
     public void printResult() {
-        for (String key :
-                words.keySet()) {
-            System.out.printf("%s: %s%n", key, words.get(key));
-        }
+        words.forEach((key, value) -> System.out.printf("%s: %s%n", key, value));
     }
 }
