@@ -4,13 +4,13 @@ public class WordStats {
 
     private final HtmlPageBody body;
 
-    private final HashMap<String, Integer> words = new HashMap<>();
-
     public WordStats(HtmlPageBody body) {
         this.body = body;
     }
 
     public HtmlPageWordStats count(char[] delimiters) {
+
+        HashMap<String, Integer> words = new HashMap<>();
 
         String text = body.getText();
 
