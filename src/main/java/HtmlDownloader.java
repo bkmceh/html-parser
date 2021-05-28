@@ -1,4 +1,6 @@
 import org.jsoup.Jsoup;
+import java.io.IOException;
+
 
 public class HtmlDownloader {
 
@@ -12,7 +14,7 @@ public class HtmlDownloader {
         try {
             final String body = Jsoup.parse(Jsoup.connect(URL).get().html()).body().text();
             return new HtmlPageBody(body);
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw new RuntimeException(String.format("Unable to parse html body text because of %s", e.getMessage()), e);
         }
     }
