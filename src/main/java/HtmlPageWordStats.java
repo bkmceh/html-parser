@@ -1,14 +1,14 @@
-import java.util.HashMap;
+import java.util.Map;
 
 public class HtmlPageWordStats {
 
-    private final HashMap<String, Integer> words;
+    private final Map<String, Integer> wordStatsCounter;
 
-    public HtmlPageWordStats(HashMap<String, Integer> words) {
-        this.words = words;
+    public HtmlPageWordStats(Map<String, Integer> wordStatsCounter) {
+        this.wordStatsCounter = wordStatsCounter;
     }
 
     public void printResult() {
-        words.forEach((key, value) -> System.out.printf("%s: %s%n", key, value));
+        wordStatsCounter.forEach((key, value) -> System.out.printf("%s: %s%n", key, value));
     }
 }
