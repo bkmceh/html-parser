@@ -2,8 +2,10 @@ import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.FileAttribute;
 
 public class Scratch {
     private static final String HTML_PAGE_PATH = "./htmlPage/page.html";
@@ -26,9 +28,12 @@ public class Scratch {
 
     private void save(final String html) {
         try {
-            Files.writeString(Paths.get(HTML_PAGE_PATH), html, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING );
+            final Path path = Paths.get(HTML_PAGE_PATH);
+            Files.createDirectories(path.getParent());
+            Files.writeString(path, html, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             throw new RuntimeException(String.format("Unable to save html page because of %s", e.getMessage()), e);
         }
     }
+
 }
