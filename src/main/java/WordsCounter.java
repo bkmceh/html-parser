@@ -1,28 +1,30 @@
+import java.util.Map;
 import java.util.HashMap;
+import org.jsoup.nodes.Element;
 
 
-public class WordStats {
+public class WordsCounter {
 
-    private final HtmlPageBody body;
+    private final Element body;
 
-    public WordStats(HtmlPageBody body) {
+    public WordsCounter(Element body) {
         this.body = body;
     }
 
     public HtmlPageWordStats count(char[] delimiters) {
 
-        HashMap<String, Integer> words = new HashMap<>();
+        Map<String, Integer> words = new HashMap<>();
 
-        String text = body.getText();
+        String text = body.text();
 
-        char[] chars = text.toCharArray();
+        char[] textChar = text.toCharArray();
 
         int indexBegin = 0;
 
-        for (int i = 0; i < chars.length; i++) {
+        for (int i = 0; i < textChar.length; i++) {
             for (char delimiter :
                     delimiters) {
-                if (delimiter == chars[i]) {
+                if (delimiter == textChar[i]) {
                     String word = text.substring(indexBegin, i).toUpperCase();
                     indexBegin = i + 1;
                     if (word.length() == 0) continue;
