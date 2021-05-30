@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args){
 
-        final HtmlPageBody body = new HtmlDownloader(URL).download();
-        final HtmlPageWordStats stat = new WordStats(body).count(DELIMITERS);
+        final HtmlPage page = new Scratch(URL).download();
+        final HtmlPageWordStats stat = new WordsCounter(page.getBody()).count(DELIMITERS);
 
         stat.printResult();
 
