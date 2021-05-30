@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileAttribute;
+
 
 public class Scratch {
     private static final String HTML_PAGE_PATH = "./htmlPage/page.html";
