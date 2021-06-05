@@ -1,5 +1,8 @@
 import java.util.Map;
 
+/**
+ * Store stat of words and have printResult method to write result in console
+ */
 public class HtmlPageWordStats {
 
     private final Map<String, Integer> wordStatsCounter;

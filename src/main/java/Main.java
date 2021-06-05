@@ -1,3 +1,7 @@
+/**
+ * @author Ilsur Shartdinov
+ * Finds words with delimiters template and count them amounts at html page
+ */
 public class Main {
 
     private final static String URL = "https://www.simbirsoft.com/";

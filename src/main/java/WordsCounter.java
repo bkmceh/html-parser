@@ -11,6 +11,11 @@ public class WordsCounter {
         this.body = body;
     }
 
+    /**
+     * Count words and them amount at page
+     * @param delimiters template to find different words
+     * @return HtmlPageWordStats with stats of words
+     */
     public HtmlPageWordStats count(char[] delimiters) {
 
         Map<String, Integer> words = new HashMap<>();
